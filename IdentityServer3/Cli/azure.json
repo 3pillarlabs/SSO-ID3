@@ -1,0 +1,217 @@
+﻿{
+    "clients": {
+        "remove": [ "idmgr_client", "infoknit", "infoknitapi" ],
+        "add": [
+            {
+                "Enabled": true,
+                "ClientId": "idmgr_client",
+                "ClientName": "IdentityManager",
+                "Flow": "Implicit",
+                "RequireConsent": false,
+                "RedirectUris": [
+                    "https://idsvr3.azurewebsites.net/admin/"
+                ],
+                "IdentityProviderRestrictions": [
+                    "idsrv"
+                ]
+            },
+            {
+                "Enabled": true,
+                "ClientId": "infoknit",
+                "ClientName": "InfoKnit MVC",
+                "Flow": "Implicit",
+                "RedirectUris": [
+                    "https://3pginfoknit.azurewebsites.net/"
+                ],
+                "PostLogoutRedirectUris": [
+                    "https://3pginfoknit.azurewebsites.net/"
+                ]
+            },
+            {
+                "Enabled": true,
+                "ClientId": "infoknitapi",
+                "ClientName": "InfoKnit API",
+                "Flow": "ClientCredentials",
+                "ClientSecrets": [
+                    { "Value": "sha256:!nf0knit" }
+                ]
+            }
+        ]
+    },
+    "scopes": {
+        "remove": [ "openid", "profile", "email", "phone", "address", "offline_access", "roles", "idmgr", "infoknitapi" ],
+        "add": [
+            {
+                "Name": "openid",
+                "DisplayName": "Your user identifier",
+                "Required": true,
+                "Type": "Identity",
+                "Claims": [
+                    {
+                        "Name": "sub",
+                        "AlwaysIncludeInIdToken": true
+                    }
+                ]
+            },
+            {
+                "Name": "profile",
+                "DisplayName": "User profile",
+                "Required": true,
+                "Type": "Identity",
+                "Emphasize": true,
+                "Claims": [
+                    {
+                        "Name": "name",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "family_name",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "given_name",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "middle_name",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "nickname",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "preferred_username",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "profile",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "picture",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "website",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "gender",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "birthdate",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "zoneinfo",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "locale",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "updated_at",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "email",
+                "DisplayName": "Your email address",
+                "Required": true,
+                "Type": "Identity",
+                "Emphasize": true,
+                "Claims": [
+                    {
+                        "Name": "email",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "email_verified",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "phone",
+                "DisplayName": "Your phone number",
+                "Required": true,
+                "Type": "Identity",
+                "Emphasize": true,
+                "Claims": [
+                    {
+                        "Name": "phone_number",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "phone_number_verified",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "address",
+                "DisplayName": "Your address",
+                "Required": true,
+                "Type": "Identity",
+                "Emphasize": true,
+                "Claims": [
+                    {
+                        "Name": "address",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "offline_access",
+                "DisplayName": "Offline Access",
+                "Required": true,
+                "Type": "Resource",
+                "Emphasize": true
+            },
+            {
+                "Name": "roles",
+                "DisplayName": "User roles",
+                "Required": true,
+                "Type": "Identity",
+                "Claims": [
+                    {
+                        "Name": "role",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "idmgr",
+                "DisplayName": "IdentityManager",
+                "Required": true,
+                "Type": "Identity",
+                "Claims": [
+                    {
+                        "Name": "name",
+                        "AlwaysIncludeInIdToken": true
+                    },
+                    {
+                        "Name": "role",
+                        "AlwaysIncludeInIdToken": true
+                    }
+                ]
+            },
+            {
+                "Name": "infoknitapi",
+                "DisplayName": "InfoKnit API",
+                "Required": true,
+                "Type": "Resource",
+                "Claims": [
+                    {
+                        "Name": "role",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            }
+        ]
+    }
+}

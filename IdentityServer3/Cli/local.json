@@ -1,0 +1,232 @@
+﻿{
+    "clients": {
+        "remove": [ "idmgr_client","webclient","clientwebapi" ],
+        "add": [
+            {
+                "Enabled": true,
+                "ClientId": "idmgr_client",
+                "ClientName": "IdentityManager",
+                "Flow": "Implicit",
+                "RequireConsent": true,
+                "AllowRememberConsent":  false,
+                "RedirectUris": [
+                    "https://ndi-lap-331.3pillar.corp/idsvr3/admin/"
+                ],
+                "IdentityProviderRestrictions": [
+                    "idsrv"
+                ]
+            },
+            {
+                "Enabled": true,
+                "ClientId": "webclient",
+                "ClientName": "MVC Web Client",
+                "Flow": "Implicit",
+                "RedirectUris": [
+                    "https://ndi-lap-331.3pillar.corp/webclient/"
+                ],
+                "PostLogoutRedirectUris": [
+                    "https://ndi-lap-331.3pillar.corp/webclient/"
+                ]
+            },
+            {
+                "Enabled": true,
+                "ClientId": "clientwebapi",
+                "ClientName": "Client WebAPI",
+                "Flow": "ClientCredentials",
+                "ClientSecrets": [
+                    { "Value": "sha256:$0m3P@$$w0rd" }
+                ]
+            }
+
+        ]
+    },
+    "scopes": {
+        "remove": [ "openid", "profile", "email", "phone", "address", "offline_access", "roles", "idmgr", "clientwebapi", "usermanager" ],
+        "add": [
+            {
+                "Name": "openid",
+                "DisplayName": "Your user identifier",
+                "Required": true,
+                "Type": "Identity",
+                "Claims": [
+                    {
+                        "Name": "sub",
+                        "AlwaysIncludeInIdToken": true
+                    }
+                ]
+            },
+            {
+                "Name": "profile",
+                "DisplayName": "User profile",
+                "Required": true,
+                "Type": "Identity",
+                "Emphasize": true,
+                "Claims": [
+                    {
+                        "Name": "name",
+                        "AlwaysIncludeInIdToken": true
+                    },
+                    {
+                        "Name": "family_name",
+                        "AlwaysIncludeInIdToken": true
+                    },
+                    {
+                        "Name": "given_name",
+                        "AlwaysIncludeInIdToken": true
+                    },
+                    {
+                        "Name": "middle_name",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "nickname",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "preferred_username",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "profile",
+                        "AlwaysIncludeInIdToken": true
+                    },
+                    {
+                        "Name": "picture",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "website",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "gender",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "birthdate",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "zoneinfo",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "locale",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "updated_at",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "email",
+                "DisplayName": "Your email address",
+                "Required": true,
+                "Type": "Identity",
+                "Emphasize": true,
+                "Claims": [
+                    {
+                        "Name": "email",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "email_verified",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "phone",
+                "DisplayName": "Your phone number",
+                "Required": true,
+                "Type": "Identity",
+                "Emphasize": true,
+                "Claims": [
+                    {
+                        "Name": "phone_number",
+                        "AlwaysIncludeInIdToken": false
+                    },
+                    {
+                        "Name": "phone_number_verified",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "address",
+                "DisplayName": "Your address",
+                "Required": true,
+                "Type": "Identity",
+                "Emphasize": true,
+                "Claims": [
+                    {
+                        "Name": "address",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "offline_access",
+                "DisplayName": "Offline Access",
+                "Required": true,
+                "Type": "Resource",
+                "Emphasize": true
+            },
+            {
+                "Name": "roles",
+                "DisplayName": "User roles",
+                "Required": true,
+                "Type": "Identity",
+                "Claims": [
+                    {
+                        "Name": "role",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "usermanager",
+                "DisplayName": "user manager",
+                "Required": true,
+                "Type": "Identity",
+                "Claims": [
+                    {
+                        "Name": "UserManager",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            },
+            {
+                "Name": "idmgr",
+                "DisplayName": "IdentityManager",
+                "Required": true,
+                "Type": "Identity",
+                "Claims": [
+                    {
+                        "Name": "name",
+                        "AlwaysIncludeInIdToken": true
+                    },
+                    {
+                        "Name": "role",
+                        "AlwaysIncludeInIdToken": true
+                    }
+                ]
+            },
+            {
+                "Name": "clientwebapi",
+                "DisplayName": "WebClient API",
+                "Required": true,
+                "Type": "Resource",
+                "Claims": [
+                    {
+                        "Name": "role",
+                        "AlwaysIncludeInIdToken": false
+                    }
+                ]
+            }
+
+        ]
+    }
+}
