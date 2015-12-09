@@ -21,13 +21,14 @@ Simple example demonstrating identity server capabilities for SSO and token base
 5.	Extract the certificate into idsrv3test.pfx file. Keep the password idsrv3test
 6.	Copy the certificate to https://github.com/3pillarlabs/SSO-ID3/blob/master/IdentityServer3/Host/Configuration/idsrv3test.pfx
 7.	Create a new  Web Application “idsvr3” under “Default Web Site” and point it to
-https://github.com/3pillarlabs/SSO-ID3/tree/master/IdentityServer3/Host 
-8.	Access https://localhost/idsvr3/Admin or https://machine-name/idsvr3/Admin 
-9.	Configure clients on IdentityServer3
-    10.	Make sure all the configuration entries are correctly setup as per the local settings
-    11.	Now under “cli” project, make sure app.config entries are all correctly setup as per your local settings. Also local.json entries to be updated for RedirectUris
-    12.	Build the cli project. Browse to its build folder of cli project and configure IdentityServer database with clients and scopes by running following command from command promt
-      13. IdSvr3EfCli.exe -c IdSvr3Config -f local.json
+https://github.com/3pillarlabs/SSO-ID3/tree/master/IdentityServer3/Host
+8.      Make sure all the configuration entries web.config for "host" are correctly setup as per the local settings.
+9.	Access https://localhost/idsvr3/Admin or https://machine-name/idsvr3/Admin 
+10.	Configure clients on IdentityServer3
+  11.	Now under “cli” project, make sure app.config entries are all correctly setup as per your local settings. Also local.json entries to be updated for RedirectUris
+  12.	Build the cli project. Browse to its build folder. 
+  13.	Configure IdentityServer database with clients and scopes by running following command from command promt
+    14. IdSvr3EfCli.exe -c IdSvr3Config -f local.json
 	
 ####WebClient
 
