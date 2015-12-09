@@ -25,9 +25,9 @@ https://github.com/3pillarlabs/SSO-ID3/tree/master/IdentityServer3/Host
 8.	Access https://localhost/idsvr3/Admin or https://machine-name/idsvr3/Admin 
 9.	Configure clients on IdentityServer3
     10.	Make sure all the configuration entries are correctly setup as per the local settings
-    11.	Now build the “cli” project. Make sure it app.config entries are all correctly setup as per your local settings
-    12.	Browse to its build folder of cli project and configure IdentityServer database with clients and scopes.
-    13.	IdSvr3EfCli.exe -c IdSvr3Config -f local.json
+    11.	Now under “cli” project, make sure app.config entries are all correctly setup as per your local settings. Also local.json entries to be updated for RedirectUris
+    12.	Build the cli project. Browse to its build folder of cli project and configure IdentityServer database with clients and scopes by running following command from command promt
+      13. IdSvr3EfCli.exe -c IdSvr3Config -f local.json
 	
 ####WebClient
 
