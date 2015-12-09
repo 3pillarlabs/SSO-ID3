@@ -12,12 +12,12 @@ Simple example demonstrating identity server capabilities for SSO and token base
 2.	Create a X509Certificate2 with name idsrv3test
 3.	Configure “Default Web Site” on SSL. Refer https://technet.microsoft.com/en-us/library/cc732230(v=ws.10).aspx
 4.	Keep the certificate in following certificate store
-    5.	Personal
-        6.	Current User 
-        7.	Trusted Root Certification Authority 
-    8.	Local
-        9.	Current User
-        10.	Trusted Root Certification Authority
+    5.	Current User
+        6. Personal
+        7. Trusted Root Certification Authority
+    8. Local Computer 
+        9. Personal
+        7. Trusted Root Certification Authority
 5.	Extract the certificate into idsrv3test.pfx file. Keep the password idsrv3test
 6.	Copy the certificate to https://github.com/3pillarlabs/SSO-ID3/blob/master/IdentityServer3/Host/Configuration/idsrv3test.pfx
 7.	Create a new  Web Application “idsvr3” under “Default Web Site” and point it to
