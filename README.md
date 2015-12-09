@@ -61,3 +61,9 @@ https://github.com/3pillarlabs/SSO-ID3/tree/master/WebClient/WebApi
         8.	Assign role to InternalUsers
 
 c.	Run WebClient and WebApi and browse different section with ExternalSiteUser and InternalSiteUser
+
+# About this project
+
+![3Pillar Global] (http://www.3pillarglobal.com/wp-content/themes/base/library/images/logo_3pg.png)
+
+**SSO-ID3** is developed and maintained by [3Pillar Global](http://www.3pillarglobal.com/).
